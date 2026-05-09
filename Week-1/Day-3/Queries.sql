@@ -75,7 +75,12 @@ WHERE e.course_id IS NULL;
   
 SELECT i.instructor_name, c.course_name
 FROM instructors i
-FULL OUTER JOIN courses c
+LEFT JOIN courses c
+ON i.instructor_id = c.instructor_id
+UNION
+SELECT i.instructor_name, c.course_name
+FROM instructors i
+RIGHT JOIN courses c
 ON i.instructor_id = c.instructor_id;
 
 
