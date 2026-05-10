@@ -314,28 +314,10 @@ UNION SELECT 10;
 
 ## 25. Employee Hierarchy
 
-WITH RECURSIVE employee_hierarchy AS (
-    SELECT employee_id,
-           employee_name,
-           manager_id,
-           department,
-           1 AS level
-    FROM employees
-    WHERE manager_id IS NULL
-
-    UNION ALL
-
-    SELECT e.employee_id,
-           e.employee_name,
-           e.manager_id,
-           e.department,
-           eh.level + 1
-    FROM employees e
-    JOIN employee_hierarchy eh
-    ON e.manager_id = eh.employee_id
-)
-SELECT *
-FROM employee_hierarchy;
+SELECT employee_id,
+employee_name, 
+manager_id 
+FROM employees;
 
 
 ## 26. Orders Above Average Amount
