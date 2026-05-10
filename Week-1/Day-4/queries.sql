@@ -28,6 +28,7 @@ SELECT e1.employee_name,
         FROM employees e2
         WHERE e2.salary > e1.salary) + 1 AS dense_rank_num
 FROM employees e1
+ORDER BY salary DESC;
 
 
 ## 4. Top 3 Highest Paid Employees
@@ -144,10 +145,13 @@ SELECT o1.order_id,
        o1.total_amount,
        (
          SELECT AVG(o2.total_amount)
-         FROM orders o2
-         WHERE o2.order_id <= o1.order_id
-         ORDER BY o2.order_id DESC
-         LIMIT 3
+         FROM (
+              SELECT total_amount
+              FROM orders o3
+              WHERE o3.order_id <= o1.order_id
+              ORDER BY o3.order_id DESC
+              LIMIT 3
+         ) o2
        ) AS moving_average
 FROM orders o1;
 
@@ -248,7 +252,6 @@ SELECT employee_name,
        (SELECT COUNT(*) FROM employees) AS total_employees
 FROM employees;
 
-
 ## 21. Total Sales Per Employee
 
 SELECT employee_id,
@@ -297,24 +300,42 @@ FROM (
 
 ## 24. Generate Numbers 1 to 10
 
-SELECT 1 AS num
-UNION SELECT 2
-UNION SELECT 3
-UNION SELECT 4
-UNION SELECT 5
-UNION SELECT 6
-UNION SELECT 7
-UNION SELECT 8
-UNION SELECT 9
-UNION SELECT 10;
+
+WITH RECURSIVE numbers AS (
+    SELECT 1 AS num
+    UNION ALL
+    SELECT num + 1
+    FROM numbers
+    WHERE num < 10
+)
+SELECT *
+FROM numbers;
 
 
 ## 25. Employee Hierarchy
 
-SELECT employee_id,
-       employee_name,
-       manager_id
-FROM employees;
+WITH RECURSIVE employee_hierarchy AS (
+    SELECT employee_id,
+           employee_name,
+           manager_id,
+           department,
+           1 AS level
+    FROM employees
+    WHERE manager_id IS NULL
+
+    UNION ALL
+
+    SELECT e.employee_id,
+           e.employee_name,
+           e.manager_id,
+           e.department,
+           eh.level + 1
+    FROM employees e
+    JOIN employee_hierarchy eh
+    ON e.manager_id = eh.employee_id
+)
+SELECT *
+FROM employee_hierarchy;
 
 
 ## 26. Orders Above Average Amount
