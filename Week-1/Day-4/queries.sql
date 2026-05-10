@@ -408,23 +408,43 @@ WHERE total_sales = (
 
 Bonus Challenge — Monthly Sales Trends
   
-WITH monthly_sales AS (
+SELECT 
+    monthly.month,
+    monthly.total_sales,
+
+    (
+        SELECT SUM(m2.total_sales)
+        FROM
+        (
+            SELECT DATE_FORMAT(order_date, '%Y-%m') AS month,
+                   SUM(total_amount) AS total_sales
+            FROM orders
+            GROUP BY DATE_FORMAT(order_date, '%Y-%m')
+        ) m2
+        WHERE m2.month <= monthly.month
+    ) AS running_total,
+
+    (
+        SELECT m3.total_sales
+        FROM
+        (
+            SELECT DATE_FORMAT(order_date, '%Y-%m') AS month,
+                   SUM(total_amount) AS total_sales
+            FROM orders
+            GROUP BY DATE_FORMAT(order_date, '%Y-%m')
+        ) m3
+        WHERE m3.month = DATE_FORMAT(
+            DATE_SUB(STR_TO_DATE(CONCAT(monthly.month, '-01'), '%Y-%m-%d'),
+            INTERVAL 1 MONTH),
+            '%Y-%m'
+        )
+    ) AS previous_month_sales
+
+FROM
+(
     SELECT DATE_FORMAT(order_date, '%Y-%m') AS month,
            SUM(total_amount) AS total_sales
     FROM orders
     GROUP BY DATE_FORMAT(order_date, '%Y-%m')
-)
-SELECT month,
-       total_sales,
-       SUM(total_sales) OVER(ORDER BY month) AS running_total,
-       LAG(total_sales) OVER(ORDER BY month) AS previous_month_sales,
-       ROUND(
-           (
-               (total_sales -
-               LAG(total_sales) OVER(ORDER BY month))
-               * 100.0
-           ) /
-           LAG(total_sales) OVER(ORDER BY month),
-           2
-       ) AS percentage_growth
-FROM monthly_sales;
+) monthly
+ORDER BY monthly.month;
