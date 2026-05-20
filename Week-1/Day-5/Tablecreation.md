@@ -1,3 +1,4 @@
+
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
     employee_name VARCHAR(100),
