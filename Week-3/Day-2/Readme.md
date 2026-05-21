@@ -1,27 +1,38 @@
-# WEEK 3 – DAY 2
-# ADVANCED ROW_NUMBER() OPERATIONS
+# WEEK 3 – DAY 2  
+# ROW_NUMBER() FUNCTIONS IN MYSQL
 
-This session demonstrates advanced ROW_NUMBER() examples using employee and order datasets.
+This project explains advanced ROW_NUMBER() operations using order and employee datasets.
 
-Topics included:
+The queries demonstrate:
 
-- Order sequencing
-- City-wise ranking
+- Order numbering
+- City-wise ordering
 - Salary ordering
 - Alphabetical employee numbering
 
 ---
 
-# Main Scenarios
+# Topics Covered
 
-- Order date numbering
-- City-based order sorting
-- Lowest salary sequencing
-- Department-wise alphabetical ordering
+## 1. Row Number Based on Order Date
+
+Assign row numbers to orders based on order date.
+
+## 2. City-wise Order Amount Numbering
+
+Assign row numbers within each city based on highest order amount.
+
+## 3. Lowest Salary Row Number
+
+Assign row numbers based on lowest salary.
+
+## 4. Alphabetical Employee Numbering
+
+Assign row numbers within departments using employee names alphabetically.
 
 ---
 
-# SQL Features Used
+# SQL Concepts Used
 
 ```sql
 ROW_NUMBER()
@@ -32,27 +43,42 @@ ORDER BY
 
 ---
 
-# Business Use Cases
+# Real-Time Use Cases
 
-- Order analysis
-- Customer reporting
-- Employee management
-- Sales analytics
+- Sales reporting
+- Customer order analysis
+- Employee sequencing
+- Department organization
 
 ---
 
-# Database Support
+# Recommended Database
 
 - MySQL 8+
 - MariaDB
 
 ---
 
-# Skills Gained
+# Suitable For
 
-- Data partitioning
-- Row sequencing
-- Sorting analysis
-- SQL reporting
+- SQL Beginners
+- Data Analytics Practice
+- Interview Preparation
+- Backend Development Learning
 
 ---
+
+# Learning Outcomes
+
+By practicing these queries, you will improve:
+
+- Analytical query writing
+- Department-wise sorting
+- City-level reporting
+- Window function understanding
+
+---
+
+# Project Goal
+
+The goal of this project is to provide practical understanding of ROW_NUMBER() functions using real-world order and employee scenarios.
