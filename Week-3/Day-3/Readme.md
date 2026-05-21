@@ -1,43 +1,54 @@
-# WEEK 3 – DAY 3
-# RANK() FUNCTION IN MYSQL
+# WEEK 3 – DAY 3  
+# RANK() FUNCTIONS IN MYSQL
 
-This project explains how to use the RANK() function with employee and order data.
+This project explains the RANK() window function in MySQL using employee and order datasets.
 
-Topics covered:
+The queries demonstrate:
 
 - Salary ranking
-- Department ranking
+- Department-wise ranking
 - Joining date ranking
 - Order amount ranking
 
 ---
 
-# Key Learning
+# What is RANK()?
 
-RANK() assigns positions to rows based on sorting conditions.
+RANK() assigns ranking values to rows.
 
-Duplicate values receive the same rank.
+Duplicate values receive the same rank, and gaps occur in ranking.
 
-Example:
+Syntax:
 
 ```sql
 RANK() OVER(
-    ORDER BY salary DESC
+    ORDER BY column_name
 )
 ```
 
 ---
 
-# Main Scenarios
+# Topics Covered
 
-- Employee salary comparison
-- Department-wise ranking
-- Employee joining analysis
-- Order amount comparison
+## 1. Employee Salary Ranking
+
+Rank employees based on highest salary.
+
+## 2. Department-wise Salary Ranking
+
+Rank employees within departments.
+
+## 3. Joining Date Ranking
+
+Assign ranks based on latest joining dates.
+
+## 4. Order Amount Ranking
+
+Rank orders based on highest amount.
 
 ---
 
-# SQL Features Used
+# SQL Concepts Used
 
 ```sql
 RANK()
@@ -48,20 +59,42 @@ ORDER BY
 
 ---
 
-# Business Use Cases
+# Real-Time Use Cases
 
-- Employee performance tracking
-- Sales analysis
-- HR reporting
-- Salary comparison systems
+- Employee performance analysis
+- Salary comparison
+- Order analysis
+- HR reporting systems
 
 ---
 
-# Skills Gained
+# Recommended Database
 
-- Ranking concepts
+- MySQL 8+
+- MariaDB
+
+---
+
+# Suitable For
+
+- SQL Beginners
+- Placement Preparation
+- Window Function Practice
+- DBMS Lab Practice
+
+---
+
+# Learning Outcomes
+
+By practicing these queries, you will improve:
+
+- Ranking logic
 - Analytical SQL
-- Reporting queries
-- Window function practice
+- Department-wise reporting
+- Window function skills
 
 ---
+
+# Project Goal
+
+The goal of this project is to provide practical experience with RANK() functions using business datasets.
