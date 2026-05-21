@@ -1,41 +1,52 @@
-# WEEK 3 – DAY 1
-# INTRODUCTION TO ROW_NUMBER() IN MYSQL
+# WEEK 3 – DAY 1  
+# ROW_NUMBER() FUNCTIONS IN MYSQL
 
-This practice session focuses on the ROW_NUMBER() window function in MySQL using employee datasets.
+This project explains the ROW_NUMBER() window function in MySQL using employee management examples.
 
-Concepts covered:
+The queries demonstrate:
 
-- Sequential numbering
+- Unique row numbering
 - Salary-based ordering
 - Department-wise numbering
-- Joining date analysis
+- Joining date ordering
 
 ---
 
-# Key Learning
+# What is ROW_NUMBER()?
 
-ROW_NUMBER() generates a unique number for every row based on sorting conditions.
+ROW_NUMBER() assigns a unique sequential number to each row.
 
-Example:
+Syntax:
 
 ```sql
 ROW_NUMBER() OVER(
-    ORDER BY salary DESC
+    ORDER BY column_name
 )
 ```
 
 ---
 
-# Main Scenarios
+# Topics Covered
 
-- Employee salary ordering
-- Department-wise employee tracking
-- Latest employee joining analysis
-- Department joining sequence analysis
+## 1. Row Number Based on Highest Salary
+
+Assign unique row numbers based on salary in descending order.
+
+## 2. Department-wise Salary Row Number
+
+Assign row numbers within each department based on highest salary.
+
+## 3. Latest Joining Date Row Number
+
+Assign row numbers based on latest joining date.
+
+## 4. Department-wise Earliest Joining Date
+
+Assign row numbers within departments using earliest joining date.
 
 ---
 
-# SQL Features Used
+# SQL Concepts Used
 
 ```sql
 ROW_NUMBER()
@@ -46,27 +57,42 @@ ORDER BY
 
 ---
 
-# Practical Applications
+# Real-Time Use Cases
 
-- HR analytics
-- Payroll systems
-- Employee reporting
-- Data organization
+- Employee ranking
+- Payroll analysis
+- Department-wise employee ordering
+- HR reporting
 
 ---
 
-# Database Support
+# Recommended Database
 
 - MySQL 8+
 - MariaDB
 
 ---
 
-# Skills Gained
+# Suitable For
 
-- Window function basics
-- Sorting techniques
-- Department analysis
-- Analytical SQL querying
+- SQL Beginners
+- Window Function Practice
+- Placement Preparation
+- DBMS Lab Practice
 
 ---
+
+# Learning Outcomes
+
+By practicing these queries, you will improve:
+
+- Window function usage
+- Department-wise analysis
+- Sorting and ranking
+- SQL analytical skills
+
+---
+
+# Project Goal
+
+The goal of this project is to provide hands-on practice with ROW_NUMBER() functions using real-world employee datasets.
