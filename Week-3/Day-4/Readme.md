@@ -1,9 +1,9 @@
-# WEEK 3 – DAY 4
-# ADVANCED RANK() OPERATIONS
+# WEEK 3 – DAY 4  
+# RANK() FUNCTIONS IN MYSQL
 
-This session focuses on advanced ranking techniques using MySQL.
+This project explains advanced RANK() operations using employee and order datasets.
 
-Topics included:
+The queries demonstrate:
 
 - City-wise order ranking
 - Department salary ranking
@@ -11,15 +11,23 @@ Topics included:
 
 ---
 
-# Main Scenarios
+# Topics Covered
 
-- Ranking orders inside cities
-- Department-wise salary comparison
-- Employee name-based ranking
+## 1. City-wise Order Ranking
+
+Rank orders within each city based on order amount.
+
+## 2. Department Salary Ranking
+
+Rank employees within departments using lowest salary first.
+
+## 3. Employee Name Ranking
+
+Rank employees alphabetically.
 
 ---
 
-# SQL Features Used
+# SQL Concepts Used
 
 ```sql
 RANK()
@@ -30,20 +38,42 @@ ORDER BY
 
 ---
 
-# Practical Applications
+# Real-Time Use Cases
 
-- Sales dashboards
+- Sales analytics
 - Employee reporting
+- Alphabetical record organization
 - Department comparisons
-- Data analysis
 
 ---
 
-# Skills Gained
+# Recommended Database
 
-- Advanced ranking
-- Data grouping
-- Employee analysis
-- SQL sorting techniques
+- MySQL 8+
+- MariaDB
 
 ---
+
+# Suitable For
+
+- SQL Beginners
+- Data Analytics Practice
+- Interview Preparation
+- Backend SQL Learning
+
+---
+
+# Learning Outcomes
+
+By practicing these queries, you will improve:
+
+- Ranking analysis
+- Partitioning logic
+- Employee sorting
+- Order analytics
+
+---
+
+# Project Goal
+
+The goal of this project is to strengthen understanding of RANK() functions using practical SQL business scenarios.
