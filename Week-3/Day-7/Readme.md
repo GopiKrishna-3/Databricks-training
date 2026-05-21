@@ -1,25 +1,33 @@
-# WEEK 3 – DAY 7
-# ADVANCED DENSE_RANK() FUNCTIONS IN MYSQL
+# WEEK 3 – DAY 7  
+# DENSE_RANK() FUNCTIONS IN MYSQL
 
-This project demonstrates advanced DENSE_RANK() operations using employee and order datasets.
+This project explains advanced DENSE_RANK() concepts in MySQL using employee and order datasets.
 
-Topics included:
+The queries demonstrate:
 
-- Lowest salary ranking
-- Department joining analysis
-- Order date ranking
-
----
-
-# Main Scenarios
-
-- Low salary comparison
-- Department-wise joining sequence
-- Order date analysis
+- Lowest salary dense ranking
+- Department-wise joining date ranking
+- Order date dense ranking
 
 ---
 
-# SQL Features Used
+# Topics Covered
+
+## 1. Dense Rank Based on Lowest Salary
+
+Assign dense ranks using lowest salary first.
+
+## 2. Department-wise Joining Date Dense Ranking
+
+Assign dense ranks within departments based on joining date.
+
+## 3. Dense Rank Based on Order Date
+
+Assign dense ranks using order dates.
+
+---
+
+# SQL Concepts Used
 
 ```sql
 DENSE_RANK()
@@ -29,28 +37,43 @@ ORDER BY
 ```
 
 ---
-# Database Support
+
+# Real-Time Use Cases
+
+- HR reporting
+- Employee joining analysis
+- Sales tracking
+- Business analytics
+
+---
+
+# Recommended Database
 
 - MySQL 8+
 - MariaDB
 
 ---
 
-# Practical Applications
+# Suitable For
 
-- HR analytics
-- Employee reporting
-- Sales tracking
-- Business analysis
-
----
-
-# Skills Gained
-
-- Advanced dense ranking
-- SQL reporting
-- Data organization
-- Analytical querying
+- SQL Beginners
+- Window Function Practice
+- Placement Preparation
+- DBMS Lab Practice
 
 ---
 
+# Learning Outcomes
+
+By practicing these queries, you will improve:
+
+- Dense ranking concepts
+- Department-wise analysis
+- SQL reporting skills
+- Real-world analytical querying
+
+---
+
+# Project Goal
+
+The goal of this project is to provide practical hands-on experience with DENSE_RANK() functions using business datasets.
